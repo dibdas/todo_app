@@ -93,7 +93,7 @@ const createProjectName = (project) => {
     currentProject = selectProject.value
 }
 
-const createDefaultTodoObject = (title, description, dueDate, priority) => {
+const createTodoObject = (title, description, dueDate, priority) => {
     if (currentProject == '') {
         createProjectName('Default Project');
     }
@@ -108,4 +108,23 @@ const createDefaultTodoObject = (title, description, dueDate, priority) => {
         }
     });
 };
+
+const validateProjectInput = (event) => {
+    event.preventDefault();
+    if (projectName.value === '') {
+        domObjects.errorMsgsAlert('Project Name can not be empty');
+    } else {
+        createProjectName(projectName.value);
+    }
+}
+
+const validateTodoInput = (event) => {
+    event.preventDefault();
+    if (todoTitle.value === '') {
+        domObjects.errorMsgsAlert('Title can not be empty');
+    } else {
+        createTodoObject(todoTitle.value, todoDescription.value, todoDueDate.value, todoPriority.value);
+    }
+};
+
 
