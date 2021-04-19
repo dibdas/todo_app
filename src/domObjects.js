@@ -25,24 +25,24 @@ todosContents = todoListDetails.innerHTML;
 
 const domObjects=()=>{
     const showProjectForm =()=>{
-        projectForm.style.display='block'
+        projectForm.style.display='block';
 
     }
     const hideProjectForm =()=>{
-        projectForm.style.display='none'
+        projectForm.style.display='none';
 
     }
     const showTodoForm =()=>{
-        myTodoForm.style.display='block'
+        myTodoForm.style.display='block';
 
     }
     const hideTodoForm =()=>{
-        myTodoForm.style.display='none'
+        myTodoForm.style.display='none';
 
     }
-    return showProjectForm,hideProjectForm,showTodoForm,hideTodoForm
+    return showProjectForm,hideProjectForm,showTodoForm,hideTodoForm;
 }
 export { mainContent,selectProject,addProjectBtn,toDoBtn,projectForm,projectName,createProject,cancelProject,
-    myTodoForm,todoTitle,todoDescription,todoDueDate,todoPriority,editTodo,submitTodo,cancelTodo}
+    myTodoForm,todoTitle,todoDescription,todoDueDate,todoPriority,editTodo,submitTodo,cancelTodo,todoLists,todoListDetails,domObjects};
 
 
