@@ -28,7 +28,7 @@
                     </div>
 
                 </nav>
-                <form class="">
+                <form id="project-form">
                     <div class="form-group">
                         <label for="projectName" class="text-white">Porject</label>
                         <input type ="text" id="projectName" class="form-control">
@@ -39,6 +39,42 @@
                     </div>
 
                 </form>
+                <form id="todo-form">
+                    <div class="form-group">
+                        <label for="todoTitle" class="text-dark">Title</label>
+                        <input type="text" id="todoTitle" class="form-control">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="todoDescription" class="text-dark">Description</label>
+                        <input type="text" id="todoDescription" class="form-control">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="todoDuedate" class="text-dark">Duedate</label>
+                        <input type="text" id="todoDuedate" class="form-control">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="todoPriority" class="text-white">Title</label>
+                        <select class="form-control" id="todoPriority">
+                            <option value="High">High</option>
+                            <option value="Meduim">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+
+                    </div>
+                    <div>
+                        <button type="submit" id="editTodo" class="btn btn-warning">Edit</button>
+                        <button type="submit" id="submitTodo" class="btn btn-warning">Submit</button>
+                        <button type="submit" id="cancelTodo" class="btn btn-warning">Cancel</button>
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="col-lg-8" id="content">
+
             </div>
             
 
