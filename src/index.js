@@ -1,47 +1,49 @@
 
-import  {mainContent,selectProject,addProjectBtn,toDoBtn,projectForm,projectName,createProject,cancelProject,
-    myTodoForm,todoTitle,todoDescription,todoDueDate,todoPriority,editTodo,submitTodo,cancelTodo,errorMsgsAlert,todoLists,todoListDetails,domObjects} from './domObjects.js';
+import {
+    mainContent, selectProject, addProjectBtn, toDoBtn, projectForm, projectName, createProject, cancelProject,
+    myTodoForm, todoTitle, todoDescription, todoDueDate, todoPriority, editTodo, submitTodo, cancelTodo, errorMsgsAlert, todoLists, todoListDetails, domObjects
+} from './domObjects.js';
 import projectObject from './project';
 import todoObject from './todo';
 
 
-let  allProjects = [];
+let allProjects = [];
 let currentProject = '';
 let currentTodo = '';
 
-const selectOption =()=>{
-    allProjects.forEach((project)=>{
+const selectOption = () => {
+    allProjects.forEach((project) => {
         const option = document.createElement('option');
-        option.innerHTML=project.projectName;
+        option.innerHTML = project.projectName;
         selectProject.appendChild(option);
     });
 };
 
-const displayCurrentProjects=(currentProject)=>{
-    if(currentProject ==''){
+const displayCurrentProjects = (currentProject) => {
+    if (currentProject == '') {
         currentProject = selectProject.value;
     }
 
-    allProjects.forEach((project)=>{
-        if(project.projectName === currentProject){
+    allProjects.forEach((project) => {
+        if (project.projectName === currentProject) {
             // domObjects.
-            todoLists.innerHTML='';
-            if(project.todoList.length>0){
-                for(let i =0 ;i<project.todoList.length;i+=1){
+            todoLists.innerHTML = '';
+            if (project.todoList.length > 0) {
+                for (let i = 0; i < project.todoList.length; i += 1) {
                     const todoDiv = document.createElement('div');
                     // add priotrity here 
                     todoDiv.classList.add('tododiv');
 
                     let todoString = `Title: ${project.todoList[i].title}`;
-                    todoString+= `Description :${project.todoList[i].description}`;
-                    todoString+= `DueDate :${project.todoList[i].dueDate}`;
-                    todoString+= `Priority  :${project.todoList[i].priority}`;
-                    todoDiv.innerHTML= todoString;
+                    todoString += `Description :${project.todoList[i].description}`;
+                    todoString += `DueDate :${project.todoList[i].dueDate}`;
+                    todoString += `Priority  :${project.todoList[i].priority}`;
+                    todoDiv.innerHTML = todoString;
 
                     const editBtn = document.createElement('button');
                     const deleteBtn = document.createElement('button');
 
-                    editBtn.innerHTML= 'Edit';
+                    editBtn.innerHTML = 'Edit';
                     deleteBtn.innerHTML = 'Delete';
                     editBtn.classList.add('editBtn');
                     deleteBtn.classList.add('deleteBtn');
@@ -53,41 +55,57 @@ const displayCurrentProjects=(currentProject)=>{
                     mainContent.appendChild(todoLists);
                 }
             }
-            else{
-                todoListDetails.innerHTML='no todo list!';
+            else {
+                todoListDetails.innerHTML = 'no todo list!';
             }
         }
     });
 };
 
-const saveProjects=()=>{
+const saveProjects = () => {
     const str = JSON.stringify(allProjects);
-    localStorage.setItem('allProjects',str);
+    localStorage.setItem('allProjects', str);
 }
 
-const getProjects =()=>{
+const getProjects = () => {
     const str = localStorage.getItem('allProjects');
     allProjects = JSON.parse(str);
-    if(!allProjects){
-        allProjects = [] 
+    if (!allProjects) {
+        allProjects = []
     }
 }
 
-const initialLoad = ()=>{
+const initialLoad = () => {
     selectOption();
     displayCurrentProjects(currentProject);
     getProjects();
 }
 initialLoad();
 
-const createProjectName=(project)=>{
+const createProjectName = (project) => {
     const newProject = projectObject(project);
     allProjects.push(newProject);
     saveProjects();
     domObjects.errorMsgsAlert('the project has been created successfully');
-    selectProject.innerHTML=''
+    selectProject.innerHTML = ''
     selectOption();
     domObjects.hideProjectForm();
     currentProject = selectProject.value
 }
+
+const createDefaultTodoObject = (title, description, dueDate, priority) => {
+    if (currentProject == '') {
+        createProjectName('Default Project');
+    }
+
+    const newTodo = todoObject(title, description, dueDate, priority);
+    allProjects.forEach((project) => {
+        if (project.projectName === currentProject) {
+            project.todoList.push(newTodo);
+            saveProjects();
+            displayCurrentProjects();
+            domObjects.hideTodoForm();
+        }
+    });
+};
 

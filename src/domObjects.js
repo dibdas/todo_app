@@ -23,29 +23,31 @@ const todoListDetails = document.createElement('p');
 const errorMsgs = document.querySelector('#errorMsgs');
 // todosContents = todoListDetails.innerHTML;
 
-const domObjects=()=>{
-    const showProjectForm =()=>{
-        projectForm.style.display='block';
+const domObjects = () => {
+    const showProjectForm = () => {
+        projectForm.style.display = 'block';
 
     }
-    const hideProjectForm =()=>{
-        projectForm.style.display='none';
+    const hideProjectForm = () => {
+        projectForm.style.display = 'none';
 
     }
-    const showTodoForm =()=>{
-        myTodoForm.style.display='block';
+    const showTodoForm = () => {
+        myTodoForm.style.display = 'block';
 
     }
-    const hideTodoForm =()=>{
-        myTodoForm.style.display='none';
+    const hideTodoForm = () => {
+        myTodoForm.style.display = 'none';
 
     }
-   
-        const errorMsgsAlert = (msg) => { errorMsgs.innerHTML = msg; }; 
 
-    return showProjectForm,hideProjectForm,showTodoForm,hideTodoForm;
+    const errorMsgsAlert = (msg) => { errorMsgs.innerHTML = msg; };
+
+    return showProjectForm, hideProjectForm, showTodoForm, hideTodoForm, errorMsgsAlert;
 }
-export { mainContent,selectProject,addProjectBtn,toDoBtn,projectForm,projectName,createProject,cancelProject,
-    myTodoForm,todoTitle,todoDescription,todoDueDate,todoPriority,editTodo,submitTodo,cancelTodo,todoLists,todoListDetails,errorMsgsAlert,domObjects};
+export {
+    mainContent, selectProject, addProjectBtn, toDoBtn, projectForm, projectName, createProject, cancelProject,
+    myTodoForm, todoTitle, todoDescription, todoDueDate, todoPriority, editTodo, submitTodo, cancelTodo, todoLists, todoListDetails, domObjects
+};
 
 
