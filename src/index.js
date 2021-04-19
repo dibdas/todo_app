@@ -1,7 +1,9 @@
-import projectObject from './project';
-import todoObject from './todo';
+
 import  {mainContent,selectProject,addProjectBtn,toDoBtn,projectForm,projectName,createProject,cancelProject,
     myTodoForm,todoTitle,todoDescription,todoDueDate,todoPriority,editTodo,submitTodo,cancelTodo,todoLists,todoListDetails,domObjects} from './domObjects.js';
+import projectObject from './project';
+import todoObject from './todo';
+
 
 let  allProjects = [];
 let currentProject = '';
@@ -15,7 +17,7 @@ const selectOption =()=>{
     });
 };
 
-const currentProjects=(currentProject)=>{
+const displayCurrentProjects=(currentProject)=>{
     if(currentProject ==''){
         currentProject = selectProject.value;
     }
@@ -58,6 +60,11 @@ const currentProjects=(currentProject)=>{
     });
 };
 
+const initialLoad = ()=>{
+    selectOption();
+    displayCurrentProjects(currentProject);
+}
 
+initialLoad();
 
 

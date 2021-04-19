@@ -21,7 +21,7 @@ const cancelTodo = document.querySelector('#cancelTodo');
 const todoLists = document.createElement('div');
 const todoListDetails = document.createElement('p');
 
-todosContents = todoListDetails.innerHTML;
+// todosContents = todoListDetails.innerHTML;
 
 const domObjects=()=>{
     const showProjectForm =()=>{
