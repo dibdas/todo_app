@@ -22,3 +22,22 @@ const todoLists = document.createElement('div');
 const todoListDetails = document.createElement('p');
 
 todosContents = todoListDetails.innerHTML;
+
+const domObjects=()=>{
+    const showProjectForm =()=>{
+        projectForm.style.display='block'
+
+    }
+    const hideProjectForm =()=>{
+        projectForm.style.display='none'
+
+    }
+    const showTodoForm =()=>{
+        myTodoForm.style.display='block'
+
+    }
+    const hideTodoForm =()=>{
+        myTodoForm.style.display='none'
+
+    }
+}
