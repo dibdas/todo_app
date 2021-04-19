@@ -20,7 +20,7 @@ const cancelTodo = document.querySelector('#cancelTodo');
 
 const todoLists = document.createElement('div');
 const todoListDetails = document.createElement('p');
-
+const errorMsgs = document.querySelector('#errorMsgs');
 // todosContents = todoListDetails.innerHTML;
 
 const domObjects=()=>{
@@ -40,9 +40,12 @@ const domObjects=()=>{
         myTodoForm.style.display='none';
 
     }
+   
+        const errorMsgsAlert = (msg) => { errorMsgs.innerHTML = msg; }; 
+
     return showProjectForm,hideProjectForm,showTodoForm,hideTodoForm;
 }
 export { mainContent,selectProject,addProjectBtn,toDoBtn,projectForm,projectName,createProject,cancelProject,
-    myTodoForm,todoTitle,todoDescription,todoDueDate,todoPriority,editTodo,submitTodo,cancelTodo,todoLists,todoListDetails,domObjects};
+    myTodoForm,todoTitle,todoDescription,todoDueDate,todoPriority,editTodo,submitTodo,cancelTodo,todoLists,todoListDetails,errorMsgsAlert,domObjects};
 
 

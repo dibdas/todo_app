@@ -1,6 +1,6 @@
 
 import  {mainContent,selectProject,addProjectBtn,toDoBtn,projectForm,projectName,createProject,cancelProject,
-    myTodoForm,todoTitle,todoDescription,todoDueDate,todoPriority,editTodo,submitTodo,cancelTodo,todoLists,todoListDetails,domObjects} from './domObjects.js';
+    myTodoForm,todoTitle,todoDescription,todoDueDate,todoPriority,editTodo,submitTodo,cancelTodo,errorMsgsAlert,todoLists,todoListDetails,domObjects} from './domObjects.js';
 import projectObject from './project';
 import todoObject from './todo';
 
@@ -78,7 +78,16 @@ const initialLoad = ()=>{
     displayCurrentProjects(currentProject);
     getProjects();
 }
-
 initialLoad();
 
+const createProjectName=(project)=>{
+    const newProject = projectObject(project);
+    allProjects.push(newProject);
+    saveProjects();
+    domObjects.errorMsgsAlert('the project has been created successfully');
+    selectProject.innerHTML=''
+    selectOption();
+    domObjects.hideProjectForm();
+    currentProject = selectProject.value
+}
 
