@@ -40,4 +40,9 @@ const domObjects=()=>{
         myTodoForm.style.display='none'
 
     }
+    return showProjectForm,hideProjectForm,showTodoForm,hideTodoForm
 }
+export { mainContent,selectProject,addProjectBtn,toDoBtn,projectForm,projectName,createProject,cancelProject,
+    myTodoForm,todoTitle,todoDescription,todoDueDate,todoPriority,editTodo,submitTodo,cancelTodo}
+
+
