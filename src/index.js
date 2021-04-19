@@ -62,13 +62,21 @@ const displayCurrentProjects=(currentProject)=>{
 
 const saveProjects=()=>{
     const str = JSON.stringify(allProjects);
-    localStorage.setItem('allProjects',str)
+    localStorage.setItem('allProjects',str);
+}
 
+const getProjects =()=>{
+    const str = localStorage.getItem('allProjects');
+    allProjects = JSON.parse(str);
+    if(!allProjects){
+        allProjects = [] 
+    }
 }
 
 const initialLoad = ()=>{
     selectOption();
     displayCurrentProjects(currentProject);
+    getProjects();
 }
 
 initialLoad();
