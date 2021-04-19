@@ -60,6 +60,12 @@ const displayCurrentProjects=(currentProject)=>{
     });
 };
 
+const saveProjects=()=>{
+    const str = JSON.stringify(allProjects);
+    localStorage.setItem('allProjects',str)
+
+}
+
 const initialLoad = ()=>{
     selectOption();
     displayCurrentProjects(currentProject);
