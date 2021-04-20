@@ -146,6 +146,7 @@ const validateTodoInput = (event) => {
     domObjects.errorMsgsAlert('Title can not be empty');
   } else {
     createTodoObject(todoTitle.value, todoDescription.value, todoDueDate.value, todoPriority.value);
+    document.getElementById('dropDownProject').reset();
   }
 };
 
