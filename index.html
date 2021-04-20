@@ -10,55 +10,52 @@
     <title>Todo App</title>
 </head>
 
-<body>
+<body class="container-fluid p-0 m-0">
     <header class="">
-        <h1 class="text-white">TODO APP</h1>
-
+        <h1 class="p-3 text-dark">TODO APP</h1>
     </header>
     <main>
-        <div class="container-fluid">
-            <div class="col-lg-4">
+        <div class="container-fluid d-flex row p-0 m-0 main">
+            <div class="col-lg-3 col-md-4 col-sm-12 nav-links bg-dark">
                 <nav>
-                    <div class="form-group">
-                        <label>Select Project </label>
-                        <select class="form-control" id="mySelectProject">
-                            <option value="Default Project" id="defaultProject">Default Project</option>
+                    <div class="form-group pb-3">
+                        <label for="mySelectProject" class="text-white">Select Project </label>
+                        <select id="mySelectProject" class="form-control" onchange="myFunction()">
+                            <option id="defaultProject" value="Default Project">Default Project</option>
                         </select>
-
                     </div>
-                    <div>
+                    <div class="d-flex justify-content-between">
                         <button id="addProjectBtn" class="btn btn-warning" type="button">Add Project</button>
                         <button id="toDoBtn" class="btn btn-warning" type="button">Create Todo</button>
                     </div>
-
                 </nav>
+
+                <!-- Create Project Form -->
                 <div id="errorMsgs"></div>
-                <form id="myProjectForm">
+                <form id="myProjectForm" class="p-2 mt-2">
                     <div class="form-group">
-                        <label for="projectName" class="text-white">Project</label>
+                        <label for="projectName" class="text-white">Project Name</label>
                         <input type="text" id="projectName" class="form-control">
                     </div>
-                    <div class="submit-cancel">
+                    <div class="d-flex justify-content-between">
                         <button type="submit" id="createProject" class="btn btn-warning">Submit</button>
-                        <button type="cancel" id="cancelProject" class="btn btn-warning">Cancel</button>
+                        <button type="submit" id="cancelProject" class="btn btn-warning">Cancel</button>
                     </div>
-
                 </form>
+
+                <!-- Create To-Do List -->
                 <form id="myTodoForm">
                     <div class="form-group">
-                        <label for="todoTitle" class="text-dark">Title</label>
+                        <label for="todoTitle" class="text-white">Title</label>
                         <input type="text" id="todoTitle" class="form-control">
-
                     </div>
                     <div class="form-group">
-                        <label for="todoDescription" class="text-dark">Description</label>
+                        <label for="todoDescription" class="text-white">Description</label>
                         <input type="text" id="todoDescription" class="form-control">
-
                     </div>
                     <div class="form-group">
-                        <label for="todoDuedate" class="text-dark">Due Date</label>
-                        <input type="text" id="todoDuedate" class="form-control">
-
+                        <label for="todoDuedate" class="text-white">Due Date</label>
+                        <input type="date" id="todoDueDate" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="todoPriority" class="text-white">Priority</label>
@@ -67,27 +64,19 @@
                             <option value="Meduim">Medium</option>
                             <option value="Low">Low</option>
                         </select>
-
                     </div>
-                    <div>
+                    <div class="d-flex justify-content-between">
                         <button type="submit" id="editTodo" class="btn btn-warning">Edit</button>
                         <button type="submit" id="submitTodo" class="btn btn-warning">Submit</button>
                         <button type="submit" id="cancelTodo" class="btn btn-warning">Cancel</button>
                     </div>
-
-
                 </form>
             </div>
-            <div class="col-lg-8" id="content">
-
+            <div class="col-lg-9 col-md-8 col-sm-12" id="content">
             </div>
-
-
         </div>
     </main>
-
-    <script src="main.js"></script>
-
+    <script src="./main.js"></script>
 </body>
 
 </html>
