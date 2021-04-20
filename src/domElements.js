@@ -15,7 +15,6 @@ const todoDescription = document.querySelector('#todoDescription');
 const todoDueDate = document.querySelector('#todoDueDate');
 const todoPriority = document.querySelector('#todoPriority');
 
-// const deleteTodo = document.getElementsByClassName('deleteBtn');
 const editTodo = document.querySelector('#editTodo');
 const submitTodo = document.querySelector('#submitTodo');
 const cancelTodo = document.querySelector('#cancelTodo');

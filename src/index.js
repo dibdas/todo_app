@@ -200,7 +200,6 @@ const btnListner = (targetBtn) => {
 };
 
 initialLoad();
-// console.log(initialLoad());
 
 addProjectBtn.onclick = () => {
   domObjects.showProjectForm();
