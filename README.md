@@ -24,9 +24,9 @@ To set up a local copy of the project
 
 1. `Run git clone git@github.com:dibdas/todo_app.git to download or you can download using HTTPS by running git clone https://github.com/dibdas/library.git in the terminal`
 2. `cd todo_app`
-3. `Install dependencies by typing npm install`
-4. Open your browser
-5. Open library/index.html
+3.  Install dependencies by typing `npm install`
+5.  Open your browser
+6.  Navigate into the `dist` directory and open `index.html`
 
 
 ## Authors
