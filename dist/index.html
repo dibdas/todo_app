@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+    <title>Todo App</title>
+</head>
+
+<body class="container-fluid p-0 m-0">
+    <header class="">
+        <h1 class="p-3 text-dark">TODO APP</h1>
+    </header>
+    <main>
+        <div class="container-fluid d-flex row p-0 m-0 main">
+            <div class="col-lg-3 col-md-4 col-sm-12 nav-links bg-primary">
+                <form id="dropDownProject">
+                    <div class="form-group pb-3">
+                        <label for="mySelectProject" class="text-white">Select Project </label>
+                        <select id="mySelectProject" class="form-control" onchange="myFunction()">
+                            <option id="defaultProject" value="Default Project">Default Project</option>
+                        </select>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button id="addProjectBtn" class="btn btn-warning" type="button">Add Project</button>
+                        <button id="toDoBtn" class="btn btn-warning" type="button">Create Todo</button>
+                    </div>
+                </form>
+
+                <!-- Create Project Form -->
+                <div id="errorMsgs"></div>
+                <form id="myProjectForm" class="p-2 mt-2">
+                    <div class="form-group">
+                        <label for="projectName" class="text-white">Project Name</label>
+                        <input type="text" id="projectName" class="form-control">
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" id="createProject" class="btn btn-warning">Submit</button>
+                        <button type="submit" id="cancelProject" class="btn btn-warning">Cancel</button>
+                    </div>
+                </form>
+
+                <!-- Create To-Do List -->
+                <form id="myTodoForm">
+                    <div class="form-group">
+                        <label for="todoTitle" class="text-white">Title</label>
+                        <input type="text" id="todoTitle" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="todoDescription" class="text-white">Description</label>
+                        <input type="text" id="todoDescription" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="todoDuedate" class="text-white">Due Date</label>
+                        <input type="date" id="todoDueDate" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="todoPriority" class="text-white">Priority</label>
+                        <select class="form-control" id="todoPriority">
+                            <option value="High">High</option>
+                            <option value="Meduim">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" id="editTodo" class="btn btn-warning">Edit</button>
+                        <button type="submit" id="submitTodo" class="btn btn-warning">Submit</button>
+                        <button type="submit" id="cancelTodo" class="btn btn-warning">Cancel</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-12" id="content">
+            </div>
+        </div>
+    </main>
+    <script src="./main.js"></script>
+</body>
+
+</html>
