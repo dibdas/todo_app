@@ -7,7 +7,7 @@
  The introduction of a new lesson about OOP. The lesson shows the concepts of “Single Responsibility” and “Tightly Coupled Objects”. 
  
 
-![img]()
+![img](https://github.com/dibdas/todo_app/blob/feature/todo/screenshot.JPG)
 
 ## Built With
 ![HTML](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
