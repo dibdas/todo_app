@@ -18,11 +18,15 @@
 ## Live Demo
 https://dibdas.github.io/todo_app/
 
-## Set Up 
+## Getting Started - Set Up
 
-1. Run git clone git@github.com:dibdas/todo_app.git to download or you can download using HTTPS by running git clone https://github.com/dibdas/library.git in the terminal
-2. Open your browser
-3. Open library/index.html
+To set up a local copy of the project
+
+1. `Run git clone git@github.com:dibdas/todo_app.git to download or you can download using HTTPS by running git clone https://github.com/dibdas/library.git in the terminal`
+2. `cd todo_app`
+3. `Install dependencies by typing npm install`
+4. Open your browser
+5. Open library/index.html
 
 
 ## Authors
