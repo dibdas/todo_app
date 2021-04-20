@@ -38,7 +38,14 @@ https://dibdas.github.io/todo_app/
 - Twitter: [@dibyend78120480](https://twitter.com/dibyend78120480)
 - Linkedin: [Dibyendu Das](https://www.linkedin.com/in/dibdas/)
 
-## License
+## 🤝 Contributing
 
-[MIT] licensed software.
+Contributions, issues, and feature requests are welcome!
 
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- To Microverse for their `README` template.
