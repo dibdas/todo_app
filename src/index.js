@@ -1,8 +1,27 @@
+/* global document */
+/* eslint-disable eqeqeq */
 import projectObject from './project';
 import todoObject from './todo';
 import {
-  mainContent, selectProject, addProjectBtn, toDoBtn, projectForm, projectName, createProject, cancelProject,
-  myTodoForm, todoTitle, todoDescription, todoDueDate, todoPriority, editTodo, submitTodo, cancelTodo, errorMsgsAlert, todoLists, todoListDetails, domObjects,
+  mainContent,
+  selectProject,
+  addProjectBtn,
+  toDoBtn,
+  projectForm,// eslint-disable-line 
+  projectName,
+  createProject,
+  cancelProject,
+  myTodoForm, // eslint-disable-line
+  todoTitle,
+  todoDescription,
+  todoDueDate,
+  todoPriority,
+  editTodo,
+  submitTodo,
+  cancelTodo,
+  todoLists,
+  todoListDetails,
+  domObjects,
 } from './domElements';
 // import './styles.css';
 
@@ -26,9 +45,9 @@ const priorityBg = (priority, todoDiv) => {
   }
 };
 
-const displayCurrentProjects = (currentProject) => {
+const displayCurrentProjects = (currentProject) => { // eslint-disable-line
   if (currentProject == '') {
-    currentProject = selectProject.value;
+    currentProject = selectProject.value; // eslint-disable-line
   }
 
   allProjects.forEach((project) => {
@@ -70,11 +89,11 @@ const displayCurrentProjects = (currentProject) => {
 
 const saveProjects = () => {
   const str = JSON.stringify(allProjects);
-  localStorage.setItem('allProjects', str);
+  localStorage.setItem('allProjects', str); // eslint-disable-line
 };
 
 const getProjects = () => {
-  const str = localStorage.getItem('allProjects');
+  const str = localStorage.getItem('allProjects'); // eslint-disable-line
   allProjects = JSON.parse(str);
   if (!allProjects) {
     allProjects = [];
@@ -162,9 +181,8 @@ const editTodoObject = () => {
   domObjects.hideTodoForm();
   allProjects.forEach((proj) => {
     if (proj.projectName === currentProject) {
-      // eslint-disable-next-line max-len
-      const editedTodo = todoObject(todoTitle.value, todoDescription.value, todoDueDate.value, todoPriority.value);
-      proj.todoList[currentTodo] = editedTodo;
+      const editedTodo = todoObject(todoTitle.value, todoDescription.value, todoDueDate.value, todoPriority.value); // eslint-disable-line 
+      proj.todoList[currentTodo] = editedTodo;// eslint-disable-line 
       const objIndex = allProjects.findIndex(((obj) => obj.projectName == currentProject));
       allProjects[objIndex] = proj;
       saveProjects();

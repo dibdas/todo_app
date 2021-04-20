@@ -1,3 +1,4 @@
+/* global document */
 const mainContent = document.querySelector('#content');
 const selectProject = document.querySelector('#mySelectProject');
 const addProjectBtn = document.querySelector('#addProjectBtn');
@@ -57,10 +58,36 @@ const domObjects = (() => {
   };
 
   return {
-    showProjectForm, hideProjectForm, showTodoForm, hideTodoForm, showSubmitTodo, hideSubmitTodo, errorMsgsAlert, removeMsg,
+    showProjectForm,
+    hideProjectForm,
+    showTodoForm,
+    hideTodoForm,
+    showSubmitTodo,
+    hideSubmitTodo,
+    errorMsgsAlert,
+    removeMsg,
   };
 })();
+
 export {
-  mainContent, selectProject, addProjectBtn, toDoBtn, projectForm, projectName, createProject, cancelProject,
-  myTodoForm, todoTitle, todoDescription, todoDueDate, todoPriority, editTodo, submitTodo, cancelTodo, todoLists, todosContents, todoListDetails, domObjects,
+  mainContent,
+  selectProject,
+  addProjectBtn,
+  toDoBtn,
+  projectForm,
+  projectName,
+  createProject,
+  cancelProject,
+  myTodoForm,
+  todoTitle,
+  todoDescription,
+  todoDueDate,
+  todoPriority,
+  editTodo,
+  submitTodo,
+  cancelTodo,
+  todoLists,
+  todosContents,
+  todoListDetails,
+  domObjects,
 };
