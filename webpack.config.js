@@ -8,7 +8,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
-    compress: true
+    compress: true,
   },
   module: {
     rules: [
@@ -25,7 +25,7 @@ module.exports = {
         // use: ['babel-loader'],
       },
     ],
-  }
+  },
   // module: {
   // rules: [
   // {

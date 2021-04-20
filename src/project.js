@@ -1,7 +1,7 @@
 const projectObject = (projectName) => {
-    const todoList = [];
+  const todoList = [];
 
-    return { projectName, todoList };
-}
+  return { projectName, todoList };
+};
 
 export default projectObject;

@@ -25,43 +25,42 @@ const errorMsgs = document.querySelector('#errorMsgs');
 const todosContents = todoListDetails.innerHTML;
 
 const domObjects = (() => {
-    const showProjectForm = () => {
-        projectForm.style.display = 'block';
+  const showProjectForm = () => {
+    projectForm.style.display = 'block';
+  };
 
-    }
+  const hideProjectForm = () => {
+    projectForm.style.display = 'none';
+  };
+  const showTodoForm = () => {
+    myTodoForm.style.display = 'block';
+  };
 
-    const hideProjectForm = () => {
-        projectForm.style.display = 'none';
+  const hideTodoForm = () => {
+    myTodoForm.style.display = 'none';
+  };
 
-    }
-    const showTodoForm = () => {
-        myTodoForm.style.display = 'block';
+  const showSubmitTodo = () => {
+    submitTodo.style.display = 'block';
+    editTodo.style.display = 'none';
+  };
 
-    }
+  const hideSubmitTodo = () => {
+    submitTodo.style.display = 'none';
+    editTodo.style.display = 'block';
+  };
 
-    const hideTodoForm = () => {
-        myTodoForm.style.display = 'none';
-    }
+  const errorMsgsAlert = (msg) => { errorMsgs.innerHTML = msg; };
 
-    const showSubmitTodo = () => {
-        submitTodo.style.display = 'block';
-        editTodo.style.display = 'none';
-    };
+  const removeMsg = () => {
+    errorMsgs.innerHTML = '';
+  };
 
-    const hideSubmitTodo = () => {
-        submitTodo.style.display = 'none';
-        editTodo.style.display = 'block';
-    };
-
-    const errorMsgsAlert = (msg) => { errorMsgs.innerHTML = msg; };
-
-    const removeMsg = () => {
-        errorMsgs.innerHTML = '';
-    };
-
-    return { showProjectForm, hideProjectForm, showTodoForm, hideTodoForm, showSubmitTodo, hideSubmitTodo, errorMsgsAlert, removeMsg };
+  return {
+    showProjectForm, hideProjectForm, showTodoForm, hideTodoForm, showSubmitTodo, hideSubmitTodo, errorMsgsAlert, removeMsg,
+  };
 })();
 export {
-    mainContent, selectProject, addProjectBtn, toDoBtn, projectForm, projectName, createProject, cancelProject,
-    myTodoForm, todoTitle, todoDescription, todoDueDate, todoPriority, editTodo, submitTodo, cancelTodo, todoLists, todosContents, todoListDetails, domObjects
+  mainContent, selectProject, addProjectBtn, toDoBtn, projectForm, projectName, createProject, cancelProject,
+  myTodoForm, todoTitle, todoDescription, todoDueDate, todoPriority, editTodo, submitTodo, cancelTodo, todoLists, todosContents, todoListDetails, domObjects,
 };
