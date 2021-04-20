@@ -23,7 +23,6 @@ import {
   todoListDetails,
   domObjects,
 } from './domElements';
-// import './styles.css';
 
 let allProjects = [];
 let currentProject = '';
