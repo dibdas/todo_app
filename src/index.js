@@ -1,4 +1,3 @@
-/* global document */
 /* eslint-disable eqeqeq */
 import projectObject from './project';
 import todoObject from './todo';

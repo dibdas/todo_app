@@ -1,4 +1,3 @@
-/* global document */
 const mainContent = document.querySelector('#content');
 const selectProject = document.querySelector('#mySelectProject');
 const addProjectBtn = document.querySelector('#addProjectBtn');
