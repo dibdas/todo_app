@@ -2,9 +2,6 @@
 ![Microverse](https://img.shields.io/badge/-Microverse-6F23FF?style=for-the-badge)
  # ToDo App
  The App is going to create todo-list that you will create dynamically.
-
- ## Description
- The introduction of a new lesson about OOP. The lesson shows the concepts of “Single Responsibility” and “Tightly Coupled Objects”. 
  
 
 ![img](https://github.com/dibdas/todo_app/blob/feature/todo/screenshot.JPG)
