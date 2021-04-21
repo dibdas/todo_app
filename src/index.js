@@ -22,7 +22,7 @@ import {
   todoListDetails,
   domObjects,
 } from './domElements';
-// import * as domelems from 
+// import * as domelems from
 import './styles.css';
 
 let allProjects = [];
