@@ -1,11 +1,11 @@
 import todoObject from './todo';
 import projectObject from './project';
-import { saveProjects } from './storage'
-import { selectProject, domObjects } from './domElements'
-import { selectOption } from './utils'
+import { saveProjects } from './storage';
+import { selectProject, domObjects } from './domElements';
+import { selectOption } from './utils';
 // import { allProjects, currentProject, displayCurrentProjects } from './index'
 
-//  allProjects = []; 
+//  allProjects = [];
 //  currentProject = '';
 
 const createProjectName = (project, allProjects) => {
@@ -19,13 +19,12 @@ const createProjectName = (project, allProjects) => {
   selectOption(allProjects);
   domObjects.hideProjectForm();
   if (selectProject) {
-    currentProject = selectProject.value;
+    currentProject = selectProject.value; // eslint-disable-line
   }
 };
 
-
 const createTodoObject = (title, description, dueDate, priority, currentProject, allProjects) => {
-  if (currentProject == '') {
+  if (currentProject === '') {
     createProjectName('Default Project', allProjects);
   }
 
@@ -35,10 +34,10 @@ const createTodoObject = (title, description, dueDate, priority, currentProject,
     if (project.projectName === currentProject) {
       project.todoList.push(newTodo);
       saveProjects(allProjects);
-      displayCurrentProjects();
+      // displayCurrentProjects();
       domObjects.hideTodoForm();
     }
   });
 };
 
-export { createProjectName, createTodoObject }
+export { createProjectName, createTodoObject };
