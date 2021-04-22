@@ -24,29 +24,13 @@ import {
 } from './domElements';
 import { selectOption, priorityBg } from './utils';
 import { saveProjects, getProjects } from './storage';
-import {createProjectName , createTodoObject} from './creators';
-// import * as domelems from
+import { createProjectName, createTodoObject } from './creators';
+
 import './styles.css';
 
 let allProjects = [];
 let currentProject = '';
 let currentTodo = '';
-
-// const selectOption = (projects) => {
-//   projects.forEach((project) => {
-//     const option = document.createElement('option');
-//     option.innerHTML = project.projectName;
-//     selectProject.appendChild(option);
-//   });
-// };
-
-// const priorityBg = (priority, todoDiv) => {
-//   if (priority === 'High') {
-//     todoDiv.classList.add('highPriority');
-//   } else if (priority === 'Low') {
-//     todoDiv.classList.add('lowPriority');
-//   }
-// };
 
 const displayCurrentProjects = (currentProject) => { // eslint-disable-line
   if (currentProject == '') {
@@ -96,39 +80,12 @@ const initialLoad = () => {
   displayCurrentProjects(currentProject);
 };
 
-// const createProjectName = (project) => {
-//   const newProject = projectObject(project);
-//   allProjects.push(newProject);
-//   saveProjects(allProjects);
-//   domObjects.errorMsgsAlert('the project has been created successfully');
-//   selectProject.innerHTML = '';
-//   selectOption(allProjects);
-//   domObjects.hideProjectForm();
-//   currentProject = selectProject.value;
-// };
-
-// const createTodoObject = (title, description, dueDate, priority) => {
-//   if (currentProject == '') {
-//     createProjectName('Default Project');
-//   }
-
-//   const newTodo = todoObject(title, description, dueDate, priority);
-//   allProjects.forEach((project) => {
-//     if (project.projectName === currentProject) {
-//       project.todoList.push(newTodo);
-//       saveProjects(allProjects);
-//       displayCurrentProjects();
-//       domObjects.hideTodoForm();
-//     }
-//   });
-// };
-
 const validateProjectInput = (event) => {
   event.preventDefault();
   if (projectName.value === '') {
     domObjects.errorMsgsAlert('Project Name can not be empty');
   } else {
-    createProjectName(projectName.value);
+    createProjectName(projectName.value, allProjects);
   }
 };
 
@@ -137,7 +94,7 @@ const validateTodoInput = (event) => {
   if (todoTitle.value === '') {
     domObjects.errorMsgsAlert('Title can not be empty');
   } else {
-    createTodoObject(todoTitle.value, todoDescription.value, todoDueDate.value, todoPriority.value);
+    createTodoObject(todoTitle.value, todoDescription.value, todoDueDate.value, todoPriority.value, currentProject, allProjects);
     document.getElementById('dropDownProject').reset();
   }
 };
@@ -234,4 +191,4 @@ selectProject.onchange = () => {
   displayCurrentProjects(currentProject);
 };
 
-export { allProjects, currentProject, displayCurrentProjects}
+export { allProjects, currentProject, displayCurrentProjects }
