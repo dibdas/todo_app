@@ -1,5 +1,4 @@
 /* eslint-disable eqeqeq */
-import projectObject from './project';
 import todoObject from './todo';
 import {
   mainContent,
@@ -22,26 +21,15 @@ import {
   todoListDetails,
   domObjects,
 } from './domElements';
+import { selectOption, priorityBg } from './utils';
+import { saveProjects, getProjects } from './storage';
+import { createProjectName, createTodoObject } from './creators';
 
-let allProjects = [];
-let currentProject = '';
+import './styles.css';
+
+let allProjects = []; // eslint-disable-line
+let currentProject = ''; // eslint-disable-line
 let currentTodo = '';
-
-const selectOption = () => {
-  allProjects.forEach((project) => {
-    const option = document.createElement('option');
-    option.innerHTML = project.projectName;
-    selectProject.appendChild(option);
-  });
-};
-
-const priorityBg = (priority, todoDiv) => {
-  if (priority === 'High') {
-    todoDiv.classList.add('highPriority');
-  } else if (priority === 'Low') {
-    todoDiv.classList.add('lowPriority');
-  }
-};
 
 const displayCurrentProjects = (currentProject) => { // eslint-disable-line
   if (currentProject == '') {
@@ -85,50 +73,10 @@ const displayCurrentProjects = (currentProject) => { // eslint-disable-line
   });
 };
 
-const saveProjects = () => {
-  const str = JSON.stringify(allProjects);
-  localStorage.setItem('allProjects', str); // eslint-disable-line
-};
-
-const getProjects = () => {
-  const str = localStorage.getItem('allProjects'); // eslint-disable-line
-  allProjects = JSON.parse(str);
-  if (!allProjects) {
-    allProjects = [];
-  }
-};
-
 const initialLoad = () => {
-  getProjects();
-  selectOption();
+  allProjects = getProjects();
+  selectOption(allProjects);
   displayCurrentProjects(currentProject);
-};
-
-const createProjectName = (project) => {
-  const newProject = projectObject(project);
-  allProjects.push(newProject);
-  saveProjects();
-  domObjects.errorMsgsAlert('the project has been created successfully');
-  selectProject.innerHTML = '';
-  selectOption();
-  domObjects.hideProjectForm();
-  currentProject = selectProject.value;
-};
-
-const createTodoObject = (title, description, dueDate, priority) => {
-  if (currentProject == '') {
-    createProjectName('Default Project');
-  }
-
-  const newTodo = todoObject(title, description, dueDate, priority);
-  allProjects.forEach((project) => {
-    if (project.projectName === currentProject) {
-      project.todoList.push(newTodo);
-      saveProjects();
-      displayCurrentProjects();
-      domObjects.hideTodoForm();
-    }
-  });
 };
 
 const validateProjectInput = (event) => {
@@ -136,7 +84,7 @@ const validateProjectInput = (event) => {
   if (projectName.value === '') {
     domObjects.errorMsgsAlert('Project Name can not be empty');
   } else {
-    createProjectName(projectName.value);
+    createProjectName(projectName.value, allProjects);
   }
 };
 
@@ -145,7 +93,8 @@ const validateTodoInput = (event) => {
   if (todoTitle.value === '') {
     domObjects.errorMsgsAlert('Title can not be empty');
   } else {
-    createTodoObject(todoTitle.value, todoDescription.value, todoDueDate.value, todoPriority.value);
+    createTodoObject(todoTitle.value, todoDescription.value, todoDueDate.value, todoPriority.value,
+      currentProject, allProjects);
     document.getElementById('dropDownProject').reset();
   }
 };
@@ -154,7 +103,7 @@ const deleteTodo = (target) => {
   allProjects.forEach((proj) => {
     if (proj.projectName === currentProject) {
       proj.todoList.splice(target.value, 1);
-      saveProjects();
+      saveProjects(allProjects);
       displayCurrentProjects(currentProject);
     }
   });
@@ -184,7 +133,7 @@ const editTodoObject = () => {
       proj.todoList[currentTodo] = editedTodo;// eslint-disable-line 
       const objIndex = allProjects.findIndex(((obj) => obj.projectName == currentProject));
       allProjects[objIndex] = proj;
-      saveProjects();
+      saveProjects(allProjects);
       displayCurrentProjects(currentProject);
     }
   });
@@ -241,3 +190,5 @@ selectProject.onchange = () => {
   currentProject = selectProject.value;
   displayCurrentProjects(currentProject);
 };
+
+export { allProjects, currentProject, displayCurrentProjects };
