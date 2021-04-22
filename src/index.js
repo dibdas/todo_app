@@ -1,5 +1,4 @@
 /* eslint-disable eqeqeq */
-import projectObject from './project';
 import todoObject from './todo';
 import {
   mainContent,
@@ -28,8 +27,8 @@ import { createProjectName, createTodoObject } from './creators';
 
 import './styles.css';
 
-let allProjects = [];
-let currentProject = '';
+let allProjects = []; // eslint-disable-line
+let currentProject = ''; // eslint-disable-line
 let currentTodo = '';
 
 const displayCurrentProjects = (currentProject) => { // eslint-disable-line
@@ -94,7 +93,8 @@ const validateTodoInput = (event) => {
   if (todoTitle.value === '') {
     domObjects.errorMsgsAlert('Title can not be empty');
   } else {
-    createTodoObject(todoTitle.value, todoDescription.value, todoDueDate.value, todoPriority.value, currentProject, allProjects);
+    createTodoObject(todoTitle.value, todoDescription.value, todoDueDate.value, todoPriority.value,
+      currentProject, allProjects);
     document.getElementById('dropDownProject').reset();
   }
 };
@@ -191,4 +191,4 @@ selectProject.onchange = () => {
   displayCurrentProjects(currentProject);
 };
 
-export { allProjects, currentProject, displayCurrentProjects }
+export { allProjects, currentProject, displayCurrentProjects };
