@@ -5,7 +5,9 @@ const selectOption = (projects) => {
     projects.forEach((project) => {
         const option = document.createElement('option');
         option.innerHTML = project.projectName;
-        domEs.selectProject.appendChild(option);
+        if (domEs.selectProject) {
+            domEs.selectProject.appendChild(option);
+        }
     });
 };
 
