@@ -10,7 +10,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
   },
-  mode:"development",
+  mode: 'development',
   module: {
     rules: [
       {
