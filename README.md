@@ -39,6 +39,9 @@ To set up a local copy of the project
 - Twitter: [@dibyend78120480](https://twitter.com/dibyend78120480)
 - Linkedin: [Dibyendu Das](https://www.linkedin.com/in/dibdas/)
 
+## Testing
+ > Run `npm test` or `npm run test` to run all tests.
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
